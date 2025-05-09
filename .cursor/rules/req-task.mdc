@@ -1,0 +1,59 @@
+---
+description: Task Manager. Load when a user requests to "Create a task" or any "task"-related language.
+globs:
+alwaysApply: false
+---
+# Task Planning Rule
+
+*This rule guides the creation of a task plan file (`docs/tasks/<YYYY-MM-DD-task-name>.md`) based on user request and project documentation.*
+
+## Before You Begin, Capture the Date
+
+Obtain the date through a terminal command with YYYY-MM-DD
+
+## Gather context from `docs/` and NOTES.md
+**Crucial:** Find and thoroughly read all relevant files in the `docs/` directory to gather context. **Prioritize `docs/PRD.md`, `docs/TECH_STACK.md`, and `docs/openapi.yaml` if they exist.** This information is *essential* for creating an accurate and useful task plan.
+
+### Core Directive
+Create and maintain a `docs/tasks/<YYYY-MM-DD-task-name>.md` file. This file outlines a step-by-step plan (up to 5 commits) for the user's coding task. The plan **must** be based on details found in the project's `docs/` directory to ensure incremental implementation with verification.
+
+### Strict Limitations
+* **File Operations:** It is **essential** to gather context by thoroughly reading relevant files in the `docs/` directory (prioritizing `docs/PRD.md`, `docs/TECH_STACK.md`, `docs/openapi.yaml`, `NOTES.md`). This information **must** inform the task plan. You are permitted to read/write the specific task file (`docs/tasks/<YYYY-MM-DD-task-name>.md`). Limit interaction with other files.
+* **Communication:** You are forbidden from generating any conversational output, commentary, preamble, or summaries, except for the initial file-naming instruction block specified in "Before You Begin". Your entire output must be the content of the `docs/tasks/<YYYY-MM-DD-task-name>.md` file itself. Do not repeat the contents of `docs/tasks/<YYYY-MM-DD-task-name>.md` back to the user in any other format.
+* **User Interaction:** You do not directly converse with the user beyond receiving the initial task description and providing the output file. If the task description, even after cross-referencing with all available `docs/` materials, is insufficient to create a coherent and specific plan, you will indicate this *within* the `docs/tasks/<YYYY-MM-DD-task-name>.md` file using the specific comment format detailed below.
+
+### `docs/tasks/<YYYY-MM-DD-task-name>.md` Structure and Content Source
+The `docs/tasks/<YYYY-MM-DD-task-name>.md` file (once correctly named by the user) must be structured as a sequence of planned commits. The primary source of information for populating this file is the user's high-level description of the coding task, **which MUST be interpreted, validated, and expanded using specific details meticulously extracted from a comprehensive review of relevant `docs/` files.** Neglecting to consult these documents thoroughly is a critical failure and will lead to an inadequate and unusable plan.
+
+#### Task Breakdown Structure:
+
+The file should generally follow this Markdown structure (after the initial file-naming instruction block):
+Each commit title must adhere to semantic commit conventions (e.g., `feat: Short description`, `fix: Bug details`, `docs: Update README`).
+
+```markdown
+# Task: [Brief Task Title - Inferred from User's Description or Explicitly Given, informed by docs/PRD.md if available]
+
+## Commit 1: [type: Descriptive Title of First Step]
+**Description:**
+[*Required Detail:* Provide a detailed explanation of this commit's goal, drawing specifics from `docs/PRD.md`, `docs/TECH_STACK.md`, etc. *Must* reference exact files (e.g., `src/utils/auth.js`), paths, function/method names (e.g., `getUserProfile()`), classes, imports (e.g., `import {Button} from '@mui/material'`), CLI commands (e.g., `npx prisma migrate dev --name init_schema`), framework APIs (e.g., `app.use(cors())`), or other precise technical details. Vague descriptions are insufficient.]
+
+**Verification:**
+[*Required Detail:* Provide explicit, actionable steps to confirm correctness *before* committing. Include specific commands (e.g., `npm run test:unit -- src/services/userService.test.js`, `curl ...`), scripts, paths, UI elements by ID/class (e.g., "Verify `<div id=\"user-greeting\">` displays username per `docs/PRD.md`"), or precise expected outputs. Vague steps like "Test the feature" are insufficient.]
+
+---
+
+## Commit 2: [type: Descriptive Title of Second Step]
+**Description:**
+[As above, CRITICALLY detailed and specific, referencing exact files, paths, functions, commands, libraries, frameworks, etc., all derived from or consistent with information in the `docs/` directory.]
+
+**Verification:**
+[As above, CRITICALLY detailed and specific, referencing exact commands, scripts, outputs, UI elements, etc., and aligned with any testing or QA guidelines in `docs/`.]
+
+---
+... (Up to 5 commits)
+
+---
+```
+
+#### Handling Insufficient Information and Ambiguity:
+If, after a **thorough review** of all relevant `docs/` files, the required specificity for file paths, function names, commands, etc., is still missing for a **Description** or **Verification** step, **do not invent details**. Insert an HTML comment (`<!-- TODO: ... -->`) at the point of ambiguity, clearly stating the specific information needed and potentially referencing the relevant `docs/` file where it might be found. Use information from `docs/TECH_STACK.md` to guide the type of detail requested (e.g., component names for React, model names for Django).

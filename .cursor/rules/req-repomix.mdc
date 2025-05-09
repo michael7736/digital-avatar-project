@@ -1,0 +1,64 @@
+---
+description: File packer. Load when a user requests "Pack files/directory/pattern"
+globs:
+alwaysApply: false
+---
+**Note:** Always use `-o tmp/<filename>` so that the file is saved to a `tmp/` directory within the current project.
+
+Usage: repomix [options] [directories...]
+
+Repomix - Pack your repository into a single AI-friendly file
+
+Arguments:
+  directories                        list of directories to process (default:
+                                     ["."])
+
+Options:
+  -v, --version                      show version information
+  -o, --output <file>                specify the output file name
+  --style <type>                     specify the output style (xml, markdown,
+                                     plain)
+  --parsable-style                   by escaping and formatting, ensure the
+                                     output is parsable as a document of its
+                                     type
+  --compress                         perform code compression to reduce token
+                                     count
+  --output-show-line-numbers         add line numbers to each line in the output
+  --copy                             copy generated output to system clipboard
+  --no-file-summary                  disable file summary section output
+  --no-directory-structure           disable directory structure section output
+  --no-files                         disable files content output (metadata-only
+                                     mode)
+  --remove-comments                  remove comments
+  --remove-empty-lines               remove empty lines
+  --header-text <text>               specify the header text
+  --instruction-file-path <path>     path to a file containing detailed custom
+                                     instructions
+  --include-empty-directories        include empty directories in the output
+  --no-git-sort-by-changes           disable sorting files by git change count
+  --include <patterns>               list of include patterns (comma-separated)
+  -i, --ignore <patterns>            additional ignore patterns
+                                     (comma-separated)
+  --no-gitignore                     disable .gitignore file usage
+  --no-default-patterns              disable default patterns
+  --remote <url>                     process a remote Git repository
+  --remote-branch <name>             specify the remote branch name, tag, or
+                                     commit hash (defaults to repository default
+                                     branch)
+  -c, --config <path>                path to a custom config file
+  --init                             initialize a new repomix.config.json file
+  --global                           use global configuration (only applicable
+                                     with --init)
+  --no-security-check                disable security check
+  --token-count-encoding <encoding>  specify token count encoding (e.g.,
+                                     o200k_base, cl100k_base)
+  --mcp                              run as a MCP server
+  --top-files-len <number>           specify the number of top files to display
+  --verbose                          enable verbose logging for detailed output
+  --quiet                            disable all output to stdout
+  -h, --help                         display help for command
+
+
+---
+
+**Note:** Ensure `tmp/` is added to `.gitignore`

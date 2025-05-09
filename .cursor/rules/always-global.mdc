@@ -1,0 +1,37 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Global Guiding Principles & Preferences
+
+## Guiding Principles
+1. Observability: add excessive logging
+2. Small files: limit files to 200 lines
+3. Micro-milestones: perform work in commit-sized chunks. Optimize for rewinding.
+
+## Package Managers
+ Default to `pnpm` unless otherwise specified
+
+## Prefered Libraries
+## Preferred Libraries
+- Testing: `vitest`
+- Formatting/Linting: `@biomejs/biome`
+- Running TypeScript: `tsx`
+
+## Running Terminal Commands
+**Important:** Avoid newline characters within single arguments or strings passed to the terminal tool, as they can cause parsing issues.
+
+
+## Git
+- AVOID --no-verify
+- Never push a failing test to the repo
+
+## Project and Config Initialization
+Use popular CLIs for creating projects and configurations whenever possible.
+
+Examples: 
+- pnpm init
+- pnpm dlx shadcn@latest add table accordion tabs separator
+- pnpm --package=typescript dlx tsc --init
+- pnpm create cloudflare@latest . --framework=next --platform=pages

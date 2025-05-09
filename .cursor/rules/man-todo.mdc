@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Surface TODOs from Documentation
+
+- Search all files within the `docs/` directory for comments containing "TODO".
+- List the most pressing or relevant TODOs found.

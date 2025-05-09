@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# You Mock Out Project File Structure
+
+- Read all the files in docs/*
+- Print the best practices for the project structure
+
+Write them to docs/STRUCTURE.md

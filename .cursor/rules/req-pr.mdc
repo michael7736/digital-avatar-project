@@ -1,0 +1,13 @@
+---
+description: Pull Request Rules. Invoke with "Create a Pull Request" or "Create a PR"
+globs:
+alwaysApply: false
+---
+- Write a summary of everything from this conversation to `docs/pr/pr-body-file-<branch-name>.md` (use the actual branch name).
+- Use the `gh` CLI to create a Pull Request, fill the title, etc., and use `--body-file ./docs/pr-body-file-<branch-name>.md`.
+
+Example:
+```bash
+git push -u origin <branch-name>
+gh pr create --title "feat: Enforce normalized, dash-separated, lowercase labels for all shells" --body-file docs/pr-body-file-fix-label-sanitization.md --fill
+```

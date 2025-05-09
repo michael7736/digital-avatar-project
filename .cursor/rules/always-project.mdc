@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+## Running Terminal Commands
+**Important:** Avoid newline characters within single arguments or strings passed to the terminal tool, as they can cause parsing issues.
+run "conda activate live" to enter live environment before run any python script

@@ -1,0 +1,33 @@
+# Coqui TTS 本地引擎配置示例
+
+# 基本配置
+engine: coqui  # 使用开源的Coqui TTS引擎
+output_dir: "temp/audio"  # 音频输出目录
+
+# Coqui TTS配置
+## 方式1: 使用预训练模型 (推荐简单入门)
+model_name: "tts_models/zh-CN/baker/tacotron2-DDC-GST"  # 中文预训练模型
+use_cuda: true  # 是否使用GPU加速 (推荐启用)
+
+## 方式2: 使用本地自定义模型 (适合高级自定义)
+# model_path: "path/to/your/model.pth"  # 模型路径
+# config_path: "path/to/your/config.json"  # 配置文件路径
+# vocoder_path: "path/to/your/vocoder.pth"  # 声码器路径 (可选)
+# vocoder_config_path: "path/to/your/vocoder_config.json"  # 声码器配置文件路径 (可选)
+
+# 合成选项
+# speaker: "your_speaker_name"  # 多说话人模型的说话人名称 (可选)
+# language: "zh-cn"  # 多语言模型的语言代码 (可选)
+
+# 安装说明:
+# 1. 安装TTS包: pip install TTS
+# 2. 首次运行时会自动下载预训练模型
+
+# 预训练模型推荐:
+# 中文模型:
+#   - tts_models/zh-CN/baker/tacotron2-DDC-GST (高质量中文)
+#   - tts_models/multilingual/multi-dataset/your_tts (多语言，包含中文)
+# 英文模型:
+#   - tts_models/en/ljspeech/tacotron2-DDC
+#   - tts_models/en/ljspeech/glow-tts
+#   - tts_models/en/ljspeech/vits 

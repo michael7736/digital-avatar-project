@@ -1,0 +1,14 @@
+---
+description: Task Execution Rules. Invoke with "execute this task"
+globs:
+alwaysApply: false
+---
+## Task Execution Guidance
+
+Execute instructions provided in an included task file (e.g., `<task>.md`).*
+
+- Follow the instructions in the included `<task>.md` file *exactly* as given.
+- Before each commit, perform the specified **Verification** step(s) for that commit.
+- After each successful `git commit`, update the corresponding commit title line in the `<task>.md` file with a ✅ emoji and the commit SHA hash.
+
+After commiting, automatically proceed to the next commit without asking for me input.

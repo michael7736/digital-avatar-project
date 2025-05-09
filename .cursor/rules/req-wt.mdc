@@ -1,0 +1,45 @@
+---
+description: Worktree manager. Load when a user requests "Create a worktree", "purge worktrees", etc.
+globs: 
+alwaysApply: false
+---
+To manage worktrees, use the `wt` cli
+If it fails to run, you may need to install `https://www.npmjs.com/package/@johnlindquist/worktree` globally
+
+Usage: wt [options] [command]
+
+Manage git worktrees and open them in the Cursor editor.
+
+Options:
+  -V, --version                       output the version number
+  -h, --help                          display help for command
+
+Commands:
+  new [options] [branchName]          Create a new worktree for the specified
+                                      branch, install dependencies if
+                                      specified, and open in editor.
+  list|ls                             List all existing worktrees for this
+                                      repository.
+  remove|rm [options] [pathOrBranch]  Remove a specified worktree. Cleans up
+                                      the .git/worktrees references.
+  merge [options] <branchName>        Commit changes in the target branch and
+                                      merge them into the current branch, then
+                                      remove the branch/worktree
+  purge                               Safely remove all worktrees except for
+                                      the main branch, with confirmation.
+  pr [options] <prNumber>             Fetch the branch for a given GitHub PR
+                                      number and create a worktree.
+  config                              Manage CLI configuration settings.
+  help [command]                      display help for command
+
+
+Examples:
+
+wt new feature/login
+wt new feature/chat --checkout
+wt new feature/auth -p ./auth-worktree
+wt new feature/deps -i pnpm
+wt new feature/vscode -e code
+
+Assumptions:
+* When running `wt new`, **append `-i pnpm`** to install packages with pnpm.

@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Creating Scripts
+
+Create a `scripts` directory in the current project
+Create TypeScript scripts that we'll run with the "bun" executable (but keep them fully compatible with node)

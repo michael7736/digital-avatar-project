@@ -1,0 +1,36 @@
+---
+description: 
+globs: *.tsx
+alwaysApply: false
+---
+---
+description:
+globs:
+alwaysApply: false
+---
+## React useEffect Dependency Rule
+
+To avoid infinite loops with useEffect, don't put functions in the dependency array unless they're stable. For on-mount effects, use an empty array ([]). If a function must be a dependency, wrap it in useCallback
+
+### Example
+**Bad:**
+```tsx
+useEffect(() => {
+  fetchNotes();
+}, [fetchNotes]); // fetchNotes is re-created every render, causing an infinite loop
+```
+
+**Good:**
+```tsx
+useEffect(() => {
+  fetchNotes();
+}, []); // Only runs on mount
+```
+
+**If you need to use a function as a dependency:**
+```tsx
+const fetchNotes = useCallback(() => { ... }, []);
+useEffect(() => {
+  fetchNotes();
+}, [fetchNotes]);
+```

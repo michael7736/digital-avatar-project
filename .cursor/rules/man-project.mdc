@@ -1,0 +1,114 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# .cursor/rules/always-project.mdc manager
+
+## Core Directive
+
+Update .cursor/rules/always-project.mdc based on project's configuration and docs
+
+## Task
+
+Gather project information about configuration, libraries:
+- list all files in the project root and read the files relevant to configuration
+- read all files in docs
+
+Read and update the following file with the information you find:
+- ./cursor/rules/always-project.mdc
+
+
+## .cursor/rules/always-project.mdc Template
+
+Use this template as guide for creating the always-project.mdc:
+
+<template>
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# [Project Name] - Project Rules
+
+## 1. Project Overview
+
+goal: [Concisely describe the main purpose and goal of the project. What problem does it solve?]
+type: [e.g., Web Application, CLI Tool, Library, Mobile App, Backend API, Monorepo]
+key features:
+- [core functionality or feature 1]
+- [core functionality or feature 2]
+- [core functionality or feature 3]
+
+## 2. Technology Stack
+
+language(s): [e.g., TypeScript 5.x, Python 3.11, Go 1.23, Java 17]
+framework(s): [e.g., Next.js 15 (App Router), React 19, FastAPI, Spring Boot, SvelteKit]
+ui library/styling: [e.g., Tailwind CSS v4, Shadcn UI, Material UI, CSS Modules]
+database(s): [e.g., PostgreSQL via Prisma, MongoDB, Supabase, SQLite via Drizzle]
+state management: [e.g., Zustand, React Context, Redux, Pinia, None (Local State)]
+api layer: [e.g., REST (via Next.js API Routes/FastAPI), GraphQL, tRPC]
+key libraries:
+- [critical dependency 1]
+- [critical dependency 2]
+
+## 3. Project Structure
+
+main source directory: [e.g., src/, app/, packages/]
+core directories:
+- components/: Reusable UI elements
+- lib/ or utils/: Shared utility functions
+- services/ or api/: Business logic, API interactions
+- types/: Shared type definitions
+- db/ or prisma/: Database schema and access
+- tests/: Test files (if not co-located)
+diagram/link: [Link to an architecture diagram or provide a simple ASCII tree if helpful.]
+
+## 4. Coding Standards & Conventions
+
+language usage: [e.g., Prefer functional components, Use async/await, Strict TypeScript mode, Avoid any]
+naming conventions:
+- files/folders: [e.g., kebab-case, PascalCase]
+- components: [e.g., PascalCase]
+- variables/functions: [e.g., camelCase, snake_case]
+- types/interfaces: [e.g., PascalCase, TPrefix]
+code style/formatting: [e.g., Prettier, ESLint, Ruff, Biome - mention config file if present, e.g., .eslintrc.js]
+comments: [e.g., English only, JSDoc for public APIs, Minimal comments]
+imports: [e.g., Absolute paths (@/), Grouped/Sorted (stdlib, external, internal)]
+
+## 5. Key Principles & Best Practices
+
+- [guiding principle 1]
+- [guiding principle 2]
+- [guiding principle 3]
+
+## 6. Testing
+
+framework: [e.g., Jest, Vitest, Pytest, Go testing]
+types: [e.g., Unit tests required for services, Integration tests for API endpoints, E2E with Playwright/Cypress]
+location: [e.g., Co-located with source files (*.test.ts), Top-level tests/ directory]
+
+## 7. Tooling & Workflow
+
+package manager: [e.g., pnpm, npm, bun, yarn, poetry, uv]
+build command(s): [e.g., pnpm build, make build]
+run command(s): [e.g., pnpm dev, python main.py, go run ./cmd/...]
+version control: [e.g., Git, Conventional Commits required, PRs to main branch]
+ci/cd: [e.g., GitHub Actions - lint, test, build on PR]
+
+## 8. (Optional) Database / API Guidelines
+
+- [Add specific rules for DB interaction (e.g., Use ORM methods only, No direct SQL), API design (e.g., RESTful principles, Error response format), or Server Actions.]
+
+## 9. (Optional) Specific Feature Rules
+
+- [Add rules for specific complex parts of the application if needed, e.g., Authentication, Internationalization (i18n), State Management details.]
+
+## 10. (Optional) Rule Referencing
+
+- [If applicable, link to other .mdc rule files for more detailed guidelines, e.g.,
+  - See [typescript.mdc](mdc:.cursor/rules/typescript.mdc) for detailed TS rules.
+  - Follow guidelines in [auth.mdc](mdc:.cursor/rules/auth.mdc) for authentication.
+  ]
+</template>

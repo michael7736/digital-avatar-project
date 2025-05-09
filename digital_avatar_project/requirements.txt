@@ -1,0 +1,33 @@
+# 项目依赖
+
+# 通用依赖
+numpy>=1.20.0
+opencv-python>=4.5.3
+torch>=1.9.0
+pillow>=8.0.0
+matplotlib>=3.4.0
+
+# 语音合成与克隆
+torchaudio>=0.9.0
+librosa>=0.8.0
+unidecode>=1.3.0
+phonemizer>=3.0.0
+openai>=0.27.0
+
+# 虚拟形象创作与渲染
+dlib>=19.22.0
+scipy>=1.7.0
+face-alignment>=1.3.5
+
+# 实时动画与唇语同步
+moviepy>=1.0.3
+pydub>=0.25.1
+
+# 对话管理chatbot设计
+langchain>=0.0.139
+sentence-transformers>=2.2.2
+
+# 直播流集成
+ffmpeg-python>=0.2.0
+pyvirtualcam>=0.9.0
+rtmpy>=0.2.0 

@@ -1,0 +1,200 @@
+---
+description: Wrangler runner. Load when a user requests to run a wrangler command.
+globs: 
+alwaysApply: false
+---
+# Wrangler CLI Documentation (Generated from Actual CLI Output)
+
+## Top-Level Commands
+
+- `wrangler docs [search..]` — Open Wrangler's command documentation in your browser
+- `wrangler init [name]` — Initialize a basic Worker
+- `wrangler dev [script]` — Start a local server for developing your Worker
+- `wrangler deploy [script]` — Deploy a Worker to Cloudflare
+- `wrangler deployments` — List and view current and past deployments
+- `wrangler rollback [version-id]` — Rollback a deployment
+- `wrangler versions` — List, view, upload, and deploy Worker versions
+- `wrangler triggers` — Update deployment triggers [experimental]
+- `wrangler delete [script]` — Delete a Worker from Cloudflare
+- `wrangler tail [worker]` — Start a log tailing session for a Worker
+- `wrangler secret` — Generate a secret for a Worker
+- `wrangler types [path]` — Generate types from Worker configuration
+
+### Resource Management
+
+- `wrangler kv` — Manage Workers KV Namespaces
+- `wrangler queues` — Manage Workers Queues
+- `wrangler r2` — Manage R2 buckets & objects
+- `wrangler d1` — Manage Workers D1 databases
+- `wrangler vectorize` — Manage Vectorize indexes
+- `wrangler hyperdrive` — Manage Hyperdrive databases
+- `wrangler cert` — Manage client mTLS certificates and CA certificate chains [open-beta]
+- `wrangler pages` — Configure Cloudflare Pages
+- `wrangler mtls-certificate` — Manage certificates for mTLS connections
+- `wrangler pubsub` — Manage Pub/Sub brokers [private beta]
+- `wrangler dispatch-namespace` — Manage dispatch namespaces
+- `wrangler ai` — Manage AI models
+- `wrangler workflows` — Manage Workflows
+- `wrangler pipelines` — Manage Cloudflare Pipelines [open-beta]
+- `wrangler login` — Login to Cloudflare
+- `wrangler logout` — Logout from Cloudflare
+- `wrangler whoami` — Retrieve user information
+- `wrangler secrets-store` — Manage the Secrets Store [alpha]
+
+---
+
+## Global Flags
+
+- `-c, --config <file>` — Path to Wrangler configuration file
+- `--cwd <dir>` — Run as if Wrangler was started in the specified directory
+- `-e, --env <env>` — Environment to use for operations and for selecting .env/.dev.vars files
+- `-h, --help` — Show help
+- `-v, --version` — Show version number
+
+---
+
+## Example Subcommand Trees
+
+### wrangler kv
+
+- `namespace`
+  - `create <namespace>`
+  - `list`
+  - `delete`
+- `key`
+  - `put <key> [value]`
+  - `list`
+  - `get <key>`
+  - `delete <key>`
+- `bulk`
+  - `get <filename>`
+  - `put <filename>`
+  - `delete <filename>`
+
+### wrangler queues
+
+- `list`
+- `create <name>`
+- `update <name>`
+- `delete <name>`
+- `info <name>`
+- `consumer`
+- `pause-delivery <name>`
+- `resume-delivery <name>`
+- `purge <name>`
+
+### wrangler r2
+
+- `object`
+  - `get <objectPath>`
+  - `put <objectPath>`
+  - `delete <objectPath>`
+- `bucket`
+  - `create <name>`
+  - `update`
+  - `list`
+  - `info <bucket>`
+  - `delete <bucket>`
+  - `sippy`
+  - `catalog`
+  - `notification`
+  - `domain`
+  - `dev-url`
+  - `lifecycle`
+  - `cors`
+  - `lock`
+
+### wrangler d1
+
+- `list`
+- `info <name>`
+- `insights <name>`
+- `create <name>`
+- `delete <name>`
+- `execute <database>`
+- `export <name>`
+- `time-travel`
+- `migrations`
+
+### wrangler vectorize
+
+- `create <name>`
+- `delete <name>`
+- `get <name>`
+- `list`
+- `query <name>`
+- `insert <name>`
+- `upsert <name>`
+- `get-vectors <name>`
+- `delete-vectors <name>`
+- `info <name>`
+- `create-metadata-index <name>`
+- `list-metadata-index <name>`
+- `delete-metadata-index <name>`
+
+### wrangler hyperdrive
+
+- `create <name>`
+- `delete <id>`
+- `get <id>`
+- `list`
+- `update <id>`
+
+### wrangler cert
+
+- `upload`
+- `list`
+- `delete`
+
+### wrangler pages
+
+- `dev [directory] [command]`
+- `functions`
+- `project`
+- `deployment`
+- `deploy [directory]`
+- `secret`
+- `download`
+
+### wrangler mtls-certificate
+
+- `upload`
+- `list`
+- `delete`
+
+### wrangler pubsub
+
+- `namespace`
+- `broker`
+
+### wrangler dispatch-namespace
+
+- `list`
+- `get <name>`
+- `create <name>`
+- `delete <name>`
+- `rename <oldName> <newName>`
+
+### wrangler ai
+
+- `models`
+- `finetune`
+
+### wrangler workflows
+
+- `list`
+- `describe <name>`
+- `trigger <name> [params]`
+- `instances`
+
+### wrangler pipelines
+
+- `create <pipeline>`
+- `list`
+- `get <pipeline>`
+- `update <pipeline>`
+- `delete <pipeline>`
+
+---
+
+This documentation is generated from actual Wrangler CLI output and is up-to-date as of the time of generation. For more details on any subcommand, run `wrangler <subcommand> --help`.

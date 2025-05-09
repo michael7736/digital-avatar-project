@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Suggest Next Development Tasks
+
+- Read relevant project documentation (especially `docs/*`).
+- Analyze requirements (consider current context and potentially `.cursor/rules/req-task.mdc`).
+- Determine and list 3 potential next tasks to work on.
+- Recommend the most logical task to start with, providing clear reasons for the choice.

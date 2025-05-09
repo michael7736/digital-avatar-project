@@ -1,0 +1,52 @@
+{
+    "voice_synthesis": {
+        "engine": "openai",
+        "voice": "alloy",
+        "language": "zh-CN",
+        "pitch": 1.0,
+        "rate": 1.0,
+        "volume": 1.0,
+        "output_dir": "temp/audio"
+    },
+    "face_animation": {
+        "model": "2d",
+        "avatar_path": "assets/avatars/default.png",
+        "animations_enabled": true,
+        "image_size": 512
+    },
+    "lip_sync": {
+        "engine": "sad_talker",
+        "sad_talker_path": "",
+        "inference_script": "inference.py",
+        "checkpoints_dir": "checkpoints",
+        "preprocess": "full",
+        "enhancer": "gfpgan",
+        "smooth_factor": 0.5,
+        "frame_rate": 30,
+        "output_dir": "temp/videos"
+    },
+    "chatbot": {
+        "engine": "openai",
+        "model": "gpt-3.5-turbo",
+        "temperature": 0.7,
+        "max_tokens": 150,
+        "max_history": 10,
+        "system_prompt": "你是一个友好的数字人助手，名叫小智。你会用亲切自然的口吻回答用户的问题，回答尽量简洁。",
+        "simulated_inputs": [
+            "你好，我想了解一下你是谁？",
+            "今天天气怎么样？",
+            "给我讲个笑话吧",
+            "你有什么功能？",
+            "推荐一首歌给我"
+        ]
+    },
+    "streaming": {
+        "enable": true,
+        "platform": "rtmp",
+        "url": "rtmp://localhost/live",
+        "key": "stream",
+        "video_bitrate": "2500k",
+        "audio_bitrate": "128k",
+        "resolution": "720p"
+    }
+} 
