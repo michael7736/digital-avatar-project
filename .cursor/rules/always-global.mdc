@@ -7,20 +7,24 @@ alwaysApply: true
 
 ## Guiding Principles
 1. Observability: add excessive logging
-2. Small files: limit files to 200 lines
-3. Micro-milestones: perform work in commit-sized chunks. Optimize for rewinding.
+2. Micro-milestones: perform work in commit-sized chunks. Optimize for rewinding.
 
 ## Package Managers
- Default to `pnpm` unless otherwise specified
+ Default to `pip` for backend unless otherwise specified
 
 ## Prefered Libraries
-## Preferred Libraries
-- Testing: `vitest`
-- Formatting/Linting: `@biomejs/biome`
-- Running TypeScript: `tsx`
+## Preferred Libraries for frontend
+- Testing: `vitest` 
+- Formatting/Linting: `Ruff`
+
+## Preferred Libraries for backend
+- Testing: `pytest` 
+- Formatting/Linting: `Ruff`
+
 
 ## Running Terminal Commands
 **Important:** Avoid newline characters within single arguments or strings passed to the terminal tool, as they can cause parsing issues.
+
 
 
 ## Git
@@ -31,7 +35,7 @@ alwaysApply: true
 Use popular CLIs for creating projects and configurations whenever possible.
 
 Examples: 
-- pnpm init
-- pnpm dlx shadcn@latest add table accordion tabs separator
-- pnpm --package=typescript dlx tsc --init
-- pnpm create cloudflare@latest . --framework=next --platform=pages
+- conda create --name <your_env_name> python=3.11
+- conda activate <your_env_name>
+- pip install -r requirements.txt
+- uvicorn main:app --reload
